@@ -1,0 +1,45 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    {
+      "source": "index.js",
+      "destination": "/api/frameworks"
+    },
+    {
+      "source": "index.js",
+      "destination": "/api/frameworks"
+    },
+    {
+      "source": "index.js",
+      "destination": "/list.json"
+    },
+    {
+      "source": "index.js",
+      "destination": "/list-all.json"
+    }
+  ],
+  "github": {
+    "silent": true,
+    "autoJobCancelation": true
+  },
+  "headers": [
+    {
+      "source": "index.js",
+      "headers": [
+        {
+          "key": "cache-control",
+          "value": "public, max-age=60, s-maxage=500, stale-while-revalidate=500, stale-if-error=500"
+        }
+      ]
+    },
+    {
+      "source": "index.js",
+      "headers": [
+        {
+          "key": "cache-control",
+          "value": "public, max-age=60, s-maxage=86400, stale-while-revalidate=86400, stale-if-error=86400"
+        }
+      ]
+    }
+  ]
+}
